@@ -60,7 +60,7 @@ function Footer() {
             <IconButton sx={{ color: "white" }} onClick={() => window.open("https://www.linkedin.com/in/ilknur-t-ab857b22b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FQndnuIbRdO3wM6jTflZDQ%3D%3D")}>
               <LinkedInIcon />
             </IconButton>
-            <IconButton sx={{ color: "white" }} onClick={() => window.open("https://medium.com/@ilknurtuncer67")}>
+            <IconButton sx={{ color: "pink" }} onClick={() => window.open("https://medium.com/@ilknurtuncer67")}>
               <AlternateEmailTwoToneIcon />
             </IconButton>
           </Box>
