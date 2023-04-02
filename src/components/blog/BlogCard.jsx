@@ -42,7 +42,7 @@ const BlogCard = () => {
           <Typography sx={{ display: "flex", alignItems: "center", mt: 2 }}>
             {/* <Avatar
               alt="Remy Sharp"
-              src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+              src="http://w7.pngwing.com/pngs/129/292/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png"
               sx={{ width: 24, height: 24,mt:2 }}
             />  */}
             <AccountCircleIcon />
