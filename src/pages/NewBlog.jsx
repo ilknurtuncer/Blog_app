@@ -1,4 +1,5 @@
 import { Card, Grid } from "@mui/metarial"
+import BlogForm from "../components/blog/BlogForm"
 
 
 const NewBlog = () => {
@@ -18,6 +19,7 @@ const NewBlog = () => {
                   }}
               >
                   YAPISI
+                  <BlogForm/>
               </Card>
           </Grid>
       </Grid>
