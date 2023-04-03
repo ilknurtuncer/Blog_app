@@ -1,9 +1,13 @@
+import { Card, Grid } from "@mui/metarial"
+
+
 const NewBlog = () => {
     return (
       <Grid container align="center" sx={{minHeight:"90vh", display:"flex", alignItems:"center", justifyContent:"center"}}>
           <Grid item xs={12}>
               <Card
                   sx={{
+                    p:2,
                       maxWidth:345,
                       height:"60vh",
                       display:"flex",
