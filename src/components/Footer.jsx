@@ -5,12 +5,12 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import { blueGrey, green} from "@mui/material/colors";
+import { green } from "@mui/material/colors";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import AlternateEmailTwoToneIcon from '@mui/icons-material/AlternateEmailTwoTone';
+import AlternateEmailTwoToneIcon from "@mui/icons-material/AlternateEmailTwoTone";
 import { IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 function Footer() {
   return (
     <Paper
@@ -19,9 +19,9 @@ function Footer() {
         width: "100%",
         position: "fixed",
         bottom: 0,
-        width: "100%",
+       
         backgroundColor: green["900"],
-        color: "white",
+        color: "pink",
       }}
       component="footer"
       square
@@ -54,13 +54,26 @@ function Footer() {
         >
           <Typography>Developed By Fs Team</Typography>
           <Box>
-            <IconButton sx={{ color: "white" }} onClick={() => window.open("https://github.com/Ilknurtuncer")}>
+            <IconButton
+              sx={{ color: "pink" }}
+              onClick={() => window.open("https://github.com/Ilknurtuncer")}
+            >
               <GitHubIcon />
             </IconButton>
-            <IconButton sx={{ color: "white" }} onClick={() => window.open("https://www.linkedin.com/in/ilknur-t-ab857b22b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FQndnuIbRdO3wM6jTflZDQ%3D%3D")}>
+            <IconButton
+              sx={{ color: "pink" }}
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/ilknur-t-ab857b22b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FQndnuIbRdO3wM6jTflZDQ%3D%3D"
+                )
+              }
+            >
               <LinkedInIcon />
             </IconButton>
-            <IconButton sx={{ color: "pink" }} onClick={() => window.open("https://medium.com/@ilknurtuncer67")}>
+            <IconButton
+              sx={{ color: "pink" }}
+              onClick={() => window.open("https://medium.com/@ilknurtuncer67")}
+            >
               <AlternateEmailTwoToneIcon />
             </IconButton>
           </Box>

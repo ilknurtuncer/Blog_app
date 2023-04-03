@@ -1,7 +1,7 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import AppRouter from "./router/AppRouter";
 import {createTheme, ThemeProvider} from "@mui/material/styles"
-import { blueGrey,  green} from "@mui/material/colors";
+import { green, pink} from "@mui/material/colors";
 function App() {
   const theme = createTheme({
     palette:{
@@ -9,7 +9,7 @@ function App() {
         main:green["900"]
       },
       secondary:{
-        main:blueGrey["900"]
+        main:pink["900"]
       }
     }
   })

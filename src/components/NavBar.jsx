@@ -60,7 +60,7 @@ function NavBar() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "pink",
               textDecoration: "none",
             }}
           >
@@ -73,7 +73,7 @@ function NavBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="pink"
             >
               <MenuIcon />
             </IconButton>
@@ -116,7 +116,7 @@ function NavBar() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "pink",
               textDecoration: "none",
             }}
           >
@@ -128,7 +128,7 @@ function NavBar() {
               <Button
                 key={index}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "pink", display: "block" }}
                 component={Link}
                 to={page.url}
               >
