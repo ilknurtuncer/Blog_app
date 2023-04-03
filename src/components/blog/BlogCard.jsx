@@ -84,7 +84,7 @@ const BlogCard = () => {
                 <span>3</span>
               </IconButton>
             </Typography>
-            <Button size="small" sx={butonStyle} variant="contained" component={Link} to="/detail/">
+            <Button size="small" sx={butonStyle} variant="contained" component={Link} to="/detail/1">
               Read More
             </Button>
           </CardActions>
