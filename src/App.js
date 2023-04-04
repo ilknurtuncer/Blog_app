@@ -5,6 +5,7 @@ import { green, pink} from "@mui/material/colors";
 import store, { persistor } from  "./app/store"
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+import { ToastContainer } from "react-toastify";
 function App() {
   const theme = createTheme({
     palette:{
@@ -27,7 +28,7 @@ function App() {
    
  </Provider>
    
-     
+     <ToastContainer/>
    
     </ThemeProvider>
   
