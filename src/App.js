@@ -27,9 +27,7 @@ function App() {
 </PersistGate>
    
  </Provider>
-   
      <ToastContainer/>
-   
     </ThemeProvider>
   
   );
