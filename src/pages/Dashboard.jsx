@@ -1,10 +1,33 @@
-import { Grid } from "@mui/material"
+import React from "react";
+
 import BlogCard from "../components/blog/BlogCard"
+import { useDispatch } from "react-redux";
+import { fetchStart, getSuccess } from "../features/blogSlice";
+import axios from "axios";
+import { useEffect } from "react";
+
 const Dashboard = () => {
+  const dispatch = useDispatch()
+  const getBlogListData = async()=>{
+    dispatch(fetchStart)
+    const BASE_URL="http://32304.fullstack.clarusway.com/api/blogs/"
+    try {
+      const {data}= await axios(`${BASE_URL}`)
+      dispatch(getSuccess(data))   
+      
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getBlogListData()
+  }, [])
   return (
-    <Grid container spacing={2} sx={{minHeight:"90vh", display:"flex", justifyContent:"center", alignItems:"center"}}>
-        <BlogCard />
-    </Grid>
-  )
-}
+    <>
+      <BlogCard   />
+    </>
+  );
+};
 export default Dashboard

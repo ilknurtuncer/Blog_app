@@ -12,8 +12,34 @@ import {
   import FavoriteIcon from "@mui/icons-material/Favorite"
   import CommentIcon from '@mui/icons-material/Comment';
   import VisibilityIcon from '@mui/icons-material/Visibility';
-  
-  const Detail = () => {
+  import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
+import { fetchStart, getSuccessDetail } from "../features/blogSlice";
+const Detail= () => {
+  const dispatch=useDispatch()
+  const { id } = useParams();
+  const {detailData}=useSelector((state)=>state.blog)
+
+  const getIdData = async () => {
+    dispatch(fetchStart);
+    const BASE_URL = "http://32304.fullstack.clarusway.com/api/blogs/";
+    try {
+      const { data } = await axios(`${BASE_URL}${id}/`,{
+        headers: { Authorization: `Token 16e1828d99f7d1d81e481902da6e70a004284c62` },
+      });
+      console.log(data)
+      dispatch(getSuccessDetail(data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getIdData()
+  }, []);
+
     return (
       <Box sx={{ minHeight: "90vh" }}>
         <Grid
