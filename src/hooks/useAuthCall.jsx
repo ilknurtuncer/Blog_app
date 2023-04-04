@@ -39,8 +39,25 @@ const useAuthCall = () => {
     }
     
     //register
-    
-    
+    const register = async ()=>{
+        dispatch(fetchStart())
+        try {
+            const {data} = await axios.post(
+                `${BASE_URL}users/register`,userInfo
+            )
+            dispatch(registerSuccess(data))
+            toastSuccessNotify("Register performed")
+            navigate("/")
+        } catch (error) {
+            dispatch(fetchFail())
+            toastErrorNotify("Register can not be performed")
+        }
+    }
+
+    return {login, logout, register}
+
 }
+    
+
 
 export default useAuthCall
