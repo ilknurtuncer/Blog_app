@@ -2,8 +2,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import AppRouter from "./router/AppRouter";
 import {createTheme, ThemeProvider} from "@mui/material/styles"
 import { green, pink} from "@mui/material/colors";
-import store from  "./app/store"
+import store, { persistor } from  "./app/store"
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 function App() {
   const theme = createTheme({
     palette:{
@@ -20,9 +21,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <Provider store= {store}>
          <CssBaseline/>
-
-    <AppRouter/>
-      </Provider>
+<PersistGate loading={null} persistor={persistor}>
+  <AppRouter/>
+</PersistGate>
+   
+ </Provider>
+   
+     
    
     </ThemeProvider>
   

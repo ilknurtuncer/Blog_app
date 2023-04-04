@@ -16,7 +16,7 @@ import {
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
-import { fetchStart, getSuccessDetail } from "../features/blogSlice";
+import { fetchStart, getSuccess } from "../features/blogSlice";
 const Detail= () => {
   const dispatch=useDispatch()
   const { id } = useParams();
@@ -30,7 +30,7 @@ const Detail= () => {
         headers: { Authorization: `Token 16e1828d99f7d1d81e481902da6e70a004284c62` },
       });
       console.log(data)
-      dispatch(getSuccessDetail(data));
+      dispatch(getSuccess(data));
     } catch (error) {
       console.log(error);
     }
