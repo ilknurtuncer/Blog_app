@@ -2,8 +2,7 @@ import axios from "axios";
 import {
   fetchFail,
   fetchStart,
-  loginSuccess,
-  
+  loginSuccess, 
   registerSuccess,
 } from "../features/authSlice";
 import { useDispatch } from "react-redux";
