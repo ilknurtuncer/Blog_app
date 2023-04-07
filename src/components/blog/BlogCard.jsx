@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Grid, IconButton } from "@mui/material";
+import { Avatar, Grid, IconButton } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
@@ -61,11 +61,7 @@ const BlogCard = () => {
               {item.publish_date}
               </Typography>
               <Typography sx={{ display: "flex", alignItems: "center", mt: 2 }}>
-                {/* <Avatar
-                          alt="Remy Sharp"
-                          src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
-                          sx={{ width: 24, height: 24,mt:2 }}
-                        />  */}
+              <Avatar alt="https://www.pngwing.com/en/free-png-hftyp"/>
                 <AccountCircleIcon />
                 <span>{item.author}</span>
               </Typography>

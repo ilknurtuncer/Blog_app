@@ -11,7 +11,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   
   const{getBlogData}= useBlogCalls();
-  const { blogs } = useSelector((state) => state.blogs);
+  const { blogs } = useSelector((state) => state.blog);
 
 
   useEffect(() => {
