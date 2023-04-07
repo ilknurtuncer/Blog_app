@@ -61,7 +61,7 @@ const BlogCard = () => {
               {item.publish_date}
               </Typography>
               <Typography sx={{ display: "flex", alignItems: "center", mt: 2 }}>
-              <Avatar alt="https://www.pngwing.com/en/free-png-hftyp"/>
+              <Avatar alt="http://w7.pngwing.com/pngs/129/292/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png"/>
                 <AccountCircleIcon />
                 <span>{item.author}</span>
               </Typography>

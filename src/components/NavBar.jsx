@@ -13,6 +13,8 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import useAuthCall from "../hooks/useAuthCall";
 
 const pages = [
   {
@@ -31,29 +33,39 @@ const pages = [
 
 const settings = [
   {
-    name:"Login",
-    url:"/login"
+    name: "Profile",
+    url: "/profile",
   },
   {
-    name:"Profile",
-    url:"/profile"
+    name: "My Blogs",
+    url: "/my-blogs",
   },
   {
-    name:"My Blogs",
-    url:"/my-blogs"
+    name: "Logout",
+    url: "/",
   },
+];
+
+const settingsPublic = [
   {
-    name:"Logout",
-    url:"/"
-  }
+    name: "Login",
+    url: "/login",
+  },
+
+  {
+    name: "Register",
+    url: "/register",
+  },
 ];
 
 function NavBar() {
-
-
-
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+
+  //current user
+  const { currentUser } = useSelector((state) => state.auth);
+
+  const { logout } = useAuthCall();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -71,7 +83,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" >
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -124,7 +136,12 @@ function NavBar() {
             >
               {/* MOBILE MENU ----------------------------------------- */}
               {pages?.map((page, index) => (
-                <MenuItem key={index} onClick={handleCloseNavMenu} component={Link} to={page.url}>
+                <MenuItem
+                  key={index}
+                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  to={page.url}
+                >
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
@@ -157,18 +174,25 @@ function NavBar() {
                 key={index}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
-                component={Link} 
+                component={Link}
                 to={page.url}
               >
                 {page.title}
               </Button>
             ))}
           </Box>
-
+          {/* ******************** AVATAR ************ */}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {currentUser?.image ? (
+                  <Avatar
+                    title={currentUser.first_name}
+                    src={currentUser.image}
+                  />
+                ) : (
+                  <Avatar src="static/images/avatar/2.jpg" />
+                )}
               </IconButton>
             </Tooltip>
             <Menu
@@ -187,11 +211,27 @@ function NavBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map(({name, url}) => (
-                <MenuItem key={name} onClick={handleCloseUserMenu}>
-                  <Button  component={Link} to={url} >{name}</Button>
-                </MenuItem>
-              ))}
+              {currentUser
+                ? settings.map(({ name, url }) =>
+                    name === "Logout" ? (
+                      <MenuItem key={name} onClick={handleCloseUserMenu}>
+                        <Button onClick={logout}>{name}</Button>
+                      </MenuItem>
+                    ) : (
+                      <MenuItem key={name} onClick={handleCloseUserMenu}>
+                        <Button component={Link} to={url}>
+                          {name}
+                        </Button>
+                      </MenuItem>
+                    )
+                  )
+                : settingsPublic.map(({ name, url }) => (
+                    <MenuItem key={name} onClick={handleCloseUserMenu}>
+                      <Button component={Link} to={url}>
+                        {name}
+                      </Button>
+                    </MenuItem>
+                  ))}
             </Menu>
           </Box>
         </Toolbar>

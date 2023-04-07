@@ -64,7 +64,7 @@ function Footer() {
               sx={{ color: "pink" }}
               onClick={() =>
                 window.open(
-                  "https://www.linkedin.com/in/ilknur-t-ab857b22b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FQndnuIbRdO3wM6jTflZDQ%3D%3D"
+                  "http://w7.pngwing.com/pngs/129/292/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png"
                 )
               }
             >

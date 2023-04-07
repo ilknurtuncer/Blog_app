@@ -3,6 +3,7 @@ import {
   fetchFail,
   fetchStart,
   loginSuccess, 
+  logoutSuccess, 
   registerSuccess,
 } from "../features/authSlice";
 import { useDispatch } from "react-redux";
@@ -35,6 +36,10 @@ const useAuthCall = () => {
   const logout = async () => {
     dispatch(fetchStart());
     try {
+      await axios.post(`${BASE_URL}users/auth/logout/`);
+      dispatch(logoutSuccess());
+      toastSuccessNotify("Logout performed");
+      navigate("/");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify("Logout can not be performed");
