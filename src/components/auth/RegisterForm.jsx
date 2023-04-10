@@ -24,6 +24,7 @@ export const registerSchema = object({
     .matches(/[!,?{}><%&$#£+-.]+/, "Password bir özel karakter içermelidir"),
 })
 
+ 
 const SignUpForm = (
     { values, handleChange, errors, touched, handleBlur }
     ) => {
@@ -42,42 +43,44 @@ const SignUpForm = (
             onBlur={handleBlur}
             helperText={touched.username && errors.username}
             error={touched.username && Boolean(errors.username)}
+            required
           />
           <TextField
-            label="First Name"
-            name="first_name"
-            id="firstName"
-            type="text"
-            variant="outlined"
-            value={values.first_name}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            helperText={touched.first_name && errors.first_name}
-            error={touched.first_name && Boolean(errors.first_name)}
-          />
-          <TextField
-            label="Last Name"
-            name="last_name"
-            id="last_name"
-            type="text"
-            variant="outlined"
-            value={values.last_name}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            helperText={touched.last_name && errors.last_name}
-            error={touched.last_name && Boolean(errors.last_name)}
-          />
-          <TextField
-            label="Email"
+            label="Email Address"
             name="email"
             id="email"
-            type="email"
+            type="text"
             variant="outlined"
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
             helperText={touched.email && errors.email}
             error={touched.email && Boolean(errors.email)}
+            required
+          />
+          <TextField
+            label="image"
+            name="image"
+            id="image"
+            type="url"
+            variant="outlined"
+            value={values.image}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            helperText={touched.image && errors.image}
+            error={touched.image && Boolean(errors.image)}
+          />
+          <TextField
+            label="Bio"
+            name="bio"
+            id="bio"
+            type=""
+            variant="outlined"
+            value={values.bio}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            helperText={touched.bio && errors.bio}
+            error={touched.bio && Boolean(errors.bio)}
           />
           <TextField
             label="password"
@@ -91,6 +94,7 @@ const SignUpForm = (
             helperText={touched.password && errors.password}
             error={touched.password && Boolean(errors.password)}
           />
+          
           <Button type="submit" variant="contained" size="large">
             Submit
           </Button>

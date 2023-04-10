@@ -46,6 +46,7 @@ const Register = () => {
                         first_name:"",
                         last_name:"",
                         email:"",
+                        bio:"",
                         password:""
                     }}
                     validationSchema={registerSchema}
@@ -58,7 +59,8 @@ const Register = () => {
                 >
                 </Formik>
                 <Box sx={{ textAlign: "center", mb: 4, p:5 }}>
-            <Link to="/login">Do you have an account?</Link>
+                    <span>Already have an account ?</span>
+            <Link to="/login">Sing in</Link>
           </Box>
 
             </Grid>

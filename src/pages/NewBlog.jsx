@@ -8,7 +8,7 @@ const NewBlog = () => {
                 sx={{
                     p:2,
                     maxWidth:345,
-                    height:"60vh",
+                    height:"70vh",
                     display:"flex",
                     flexDirection:"column",
                     alignItems:"center",
